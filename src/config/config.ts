@@ -9,8 +9,5 @@ export default {
   REFRESH_TOKEN_SECRET:
     process.env.REFRESH_TOKEN_SECRET || "refresh_token_secret",
   REFRESH_TOKEN_EXPIRY: process.env.REFRESH_TOKEN_EXPIRY || "7d",
-  ADMIN_LOGIN_EMAIL: process.env.ADMIN_LOGIN_EMAIL || "",
-  ADMIN_LOGIN_PASSWORD: process.env.ADMIN_LOGIN_PASSWORD || "",
-  COOKIE_PASSWORD: process.env.COOKIE_PASSWORD || "",
   NODE_ENV: process.env.NODE_ENV || "",
 };
