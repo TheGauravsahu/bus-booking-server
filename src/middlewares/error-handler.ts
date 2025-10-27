@@ -14,5 +14,6 @@ export const errorHandler = (
     success: false,
     error: msg,
     message: "Something went wrong",
+    data: []
   });
 };

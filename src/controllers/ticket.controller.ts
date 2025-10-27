@@ -20,7 +20,11 @@ class TicketController {
         .sort({ bookedAt: -1 });
 
       if (!tickets || tickets.length === 0) {
-        throw createHttpError(400, "No tickets found.");
+        return res.status(200).json({
+          success: true,
+          message: "No tickets found",
+          data: [],
+        });
       }
       return res.status(200).json({
         success: true,
