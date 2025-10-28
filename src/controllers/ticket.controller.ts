@@ -13,10 +13,7 @@ class TicketController {
         .find({
           user: userId,
         })
-        .populate(
-          "bus",
-          "busId from to busType company departureTime arrivalTime price"
-        )
+        .populate("bus")
         .sort({ bookedAt: -1 });
 
       if (!tickets || tickets.length === 0) {
@@ -78,11 +75,14 @@ class TicketController {
 
       bus.availableSeats -= seatNumbers.length;
       await bus.save();
+      const populatedTicket = await ticketModel
+        .findById(newTicket._id)
+        .populate("bus");
 
       return res.status(201).json({
         success: true,
         message: "Ticket booked successfully",
-        data: newTicket,
+        data: populatedTicket,
       });
     }
   );
