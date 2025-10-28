@@ -4,6 +4,11 @@ export interface ISeat  {
   booked: boolean;
 }
 
+ interface Seats {
+  rowId: number;
+  seats: ISeat[];
+}
+
 export const locations = [
   "Lucknow",
   "Delhi",
@@ -99,3 +104,4 @@ export const generateSeats = () => {
   }
   return seats;
 };
+

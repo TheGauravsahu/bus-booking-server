@@ -12,6 +12,9 @@ export interface ISeat  {
 }
 
 
+
+
+
 export interface IBus {
   bus_id: string;
   from: string;

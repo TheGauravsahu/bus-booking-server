@@ -98,7 +98,7 @@ const busSchema = new mongoose.Schema<IBus>(
       default: 0,
     },
     badges: [{ type: String }],
-    seats: [{ seatSchema }],
+    seats: [seatSchema],
   },
   { timestamps: true }  
 );
